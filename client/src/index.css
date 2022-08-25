@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.PhoneInputInput {
+  outline: none;
+  border: none;
+}
+
+body {
+  overflow-x: hidden !important;
+  font-family: "Poppins", sans-serif;
+  background-color: yellow;
+}
+html {
+  overflow-x: hidden !important;
+}

@@ -1,0 +1,28 @@
+
+table{
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+  table, th, td {
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+    border-left: 1px solid black;    
+  }
+  
+  table{
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .table-header-row{
+    background-color: #4ECDC4;
+  }
+  
+  .user-table-row{
+    border-top:1px solid black ;
+  
+  }
+  
