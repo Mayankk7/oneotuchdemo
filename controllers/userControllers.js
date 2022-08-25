@@ -1092,6 +1092,7 @@ const Verify = async (req, res) => {
       .digest("hex");
 
     if (razorpay_signature === signature) {
+      
       const member = {
         id: id,
         type: type,
