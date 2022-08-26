@@ -13,7 +13,7 @@ var timeout = require('connect-timeout')
 app.use(cors());
 app.use(express.json());
 app.use(pdf);
-app.use(timeout('20s'))
+app.use(timeout('5s'))
 
 function haltOnTimedout (req, res, next) {
   if (!req.timedout) next()
