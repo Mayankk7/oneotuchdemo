@@ -8,16 +8,11 @@ const path = require("path");
 const app = express();
 const server = http.createServer(app);
 const enforce = require("express-sslify");
-var timeout = require('connect-timeout')
 
 app.use(cors());
 app.use(express.json());
 app.use(pdf);
-app.use(timeout('5s'))
 
-function haltOnTimedout (req, res, next) {
-  if (!req.timedout) next()
-}
 
 //Connect to mongoose
 let mongo_URI = "";
