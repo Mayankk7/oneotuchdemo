@@ -1092,13 +1092,13 @@ const Verify = async (req, res) => {
       .digest("hex");
 
     if (razorpay_signature === signature) {
-      
+
       const member = {
         id: id,
         type: type,
         amountpaid: amountpaid,
         activateDate: activateDate,
-        // razorpay_order_id: razorpay_order_id,
+        razorpay_order_id: razorpay_subscription_id,
         razorpay_payment_id: razorpay_payment_id,
         razorpay_signature: razorpay_signature,
       };
