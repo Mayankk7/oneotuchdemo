@@ -25,7 +25,7 @@ const Payment = () => {
     //console.log(data.data.id);
     const date = new Date();
     const options = {
-      key: "rzp_test_kTXf1E4PobsO2X",
+      key: "rzp_live_4LZvaRFZHLOFLg",
       amount: type.price,
       currency: data.currency,
       name: name,
