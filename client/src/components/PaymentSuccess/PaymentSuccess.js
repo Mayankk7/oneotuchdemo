@@ -9,15 +9,15 @@ const PaymentSuccess = () => {
   const token = localStorage.getItem("auth-token");
   //console.log(token);
 
-  const GenerateInvoice = () => {
+  const GenerateInvoice = async () => {
     const object = {
       type: params.type,
       price: params.price,
       id: params.id,
     };
     //console.log(object);
-    axios(`/api/auth/invoice/${object.type}/${object.price}/${object.id}`, {
-      method: "GET",
+    await axios(`/api/auth/invoice/${object.type}/${object.price}/${object.id}`, {
+      method: "POST",
       responseType: "blob", //Force to receive data in a Blob Format
     })
       .then((response) => {
