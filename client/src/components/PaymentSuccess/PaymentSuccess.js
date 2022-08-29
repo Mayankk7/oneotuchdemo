@@ -17,7 +17,7 @@ const PaymentSuccess = () => {
     };
     //console.log(object);
     await axios(`/api/auth/invoice/${object.type}/${object.price}/${object.id}`, {
-      method: "POST",
+      method: "GET",
       responseType: "blob", //Force to receive data in a Blob Format
     })
       .then((response) => {
