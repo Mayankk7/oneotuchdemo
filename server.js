@@ -11,7 +11,6 @@ const enforce = require("express-sslify");
 
 app.use(cors());
 app.use(express.json());
-app.use(pdf);
 
 
 //Connect to mongoose
