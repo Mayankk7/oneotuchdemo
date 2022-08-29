@@ -10,7 +10,6 @@ const Silver = require("../models/silver")
 const Razorpay = require("razorpay");
 const instance = require("../razorpay");
 const Member = require("../models/members");
-
 // const sendgridTransport = require("nodemailer-sendgrid-transport");
 const crypto = require("crypto");
 const pdf = require("express-pdf");
@@ -133,7 +132,7 @@ const registerUser = async (req, res) => {
       </div>`,
       };
 
-      transporter.sendMail(mailOptions, function (err) {
+      await transporter.sendMail(mailOptions, function (err) {
         if (err) {
           console.log(err);
           return res.status(500).send({
@@ -266,7 +265,8 @@ const getUserByID = async (req, res) => {
   }
 };
 
-const confirmEmail = function (req, res, next) {
+const confirmEmail = function (req, res) {
+  console.log(req.params.token)
   Token.findOne({ token: req.params.token }, function (err, token) {
     // token is not found into database i.e. token may have expired
     if (!token) {
@@ -1254,7 +1254,7 @@ const DownloadInvoice = async (req, res) => {
   const fullname = user.fullname;
   const userid = id;
   const email = user.email;
-
+  
   res.pdfFromHTML({
     filename: "invoice.pdf",
     htmlContent: `<html>

@@ -8,11 +8,11 @@ const path = require("path");
 const app = express();
 const server = http.createServer(app);
 const enforce = require("express-sslify");
+const pdf = require("express-pdf");
 
 app.use(cors());
 app.use(express.json());
-
-
+app.use(pdf); 
 //Connect to mongoose
 let mongo_URI = "";
 //if (process.env.NODE_ENV == "production") {

@@ -17,8 +17,8 @@ const PaymentSuccess = () => {
     };
     //console.log(object);
     await axios(`/api/auth/invoice/${object.type}/${object.price}/${object.id}`, {
-      method: "GET",
-      responseType: "blob", //Force to receive data in a Blob Format
+      method: "POST",
+      responseType: "blob" //Force to receive data in a Blob Format
     })
       .then((response) => {
         //Create a Blob from the PDF Stream

@@ -58,7 +58,7 @@ const {
 
 
 //invoice
-router.get("/invoice/:type/:price/:id",DownloadInvoice);
+router.post("/invoice/:type/:price/:id",DownloadInvoice);
 
 //member 
 router.get("/getsilvermember", auth, getSilverMember);
